@@ -1,3 +1,5 @@
+// const axios = require("axios")
+
 function renderAddJob() {
   document.querySelector('#page').innerHTML = `
   <section class="job">
@@ -56,4 +58,18 @@ function renderAddJob() {
 function createJob(event) {
   event.preventDefault()
   const form = event.target
+
+  const data = Object.fromEntries(new FormData(form))
+
+  axios.post('/api/jobs', data)
+    .then(successResponse => {
+      const newJob = successResponse.data
+      state.jobs.push(newJob)
+    })
+    .catch(errorResponse => {
+      document.querySelector('#error')
+        .innerHTML = errorResponse.response.data.message
+    })
 }
+
+renderAddJob()
