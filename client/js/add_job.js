@@ -8,7 +8,7 @@ function renderAddJob() {
 
     <fieldset>
       <label for="">Role:</label>
-      <input type="text" name="name">
+      <input type="text" name="role">
     </fieldset>
 
     <fieldset>
