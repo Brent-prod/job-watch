@@ -17,7 +17,7 @@ app.use(express.static('client'))
 app.use(express.json())
 
 // routes (middleware)
-app.use('/api/user', usersController);
+app.use('/api/users', usersController);
 
 //--handle any errors that are thrown _anywhere_ in the stack of middlewares
 //  app.use(errorHandler);
