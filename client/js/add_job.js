@@ -1,11 +1,9 @@
-// const axios = require("axios")
-
 function renderAddJob() {
   document.querySelector('#page').innerHTML = `
   <section class="job">
   <h1>Add Job</h1>
 
-  <form onsubmit="createJob(job)">
+  <form onsubmit="createJob(event)">
     <section id="error"></section>
 
     <fieldset>

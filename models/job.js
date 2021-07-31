@@ -7,21 +7,18 @@ const Job = {
       VALUES($1, $2, $3, $4, $5, $6)
       RETURNING *
     `
-    const jobStatus = checkStatus(status)
-
-    return db.query(sql, [role, company, close_date, contact, notes, jobStatus])
+    return db.query(sql, [role, company, close_date, contact, notes, status])
       .then(dbResponse => {
         return dbResponse.rows[0]
       })
+  },
+
+  findAll() {
+    const sql = "SELECT * FROM jobs"
+    return db.query(sql)
+      .then(dbRes => dbRes.rows)
   }
 }
 
-// check status
-function checkStatus(status) {
-  if (status === "Incomplete") {
-    status = false
-  }
-  return status
-}
 
 module.exports = Job
