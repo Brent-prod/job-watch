@@ -8,5 +8,5 @@ CREATE TABLE jobs(
   close_date DATE,
   contact TEXT,
   notes TEXT,
-  status BOOLEAN
+  status TEXT
 );
