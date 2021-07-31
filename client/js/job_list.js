@@ -16,7 +16,7 @@ function showJobs() {
       <h2>${job.role} - ${job.company}</h2>
       <ul>
         <li><span class="material-icons delete-job" onClick="deleteJob(event)">delete job</span></li>
-        <li><span class="material-icons edit-job" onClick="updateJob(event)">edit job</span></li>
+        <li><span class="material-icons edit-job"><a href="/edit_job.html">Edit job</a></span></li>
       </ul>
     </header>
     <ul>
@@ -35,11 +35,13 @@ function deleteJob(event) {
   const jobId = jobDom.dataset.id
 
   axios.delete(`/api/jobs/${jobId}`)
-    .then(() => {
+    .then(resp => {
       jobDom.remove()
+      resp.json({deleted : `treasure ID ${jobId}`})
     })
 }
 
 function updateJob(event) {
-
+  event.preventDefault()
+  
 }

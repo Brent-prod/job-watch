@@ -17,6 +17,24 @@ const Job = {
     const sql = "SELECT * FROM jobs"
     return db.query(sql)
       .then(dbRes => dbRes.rows)
+  },
+
+  edit(role, company, close_date, contact, notes, status, id) {
+    const sql = `
+    UPDATE jobs
+    SET role = $1,
+        company = $2,
+        close_date = $3,
+        contact = $4,
+        notes = $5,
+        status = $6
+    WHERE id = $7
+    RETURNING *
+    `
+    return db.query(sql, [role, company, close_date, contact, notes, status, id])
+      .then(dbResponse => {
+        return dbResponse.rows[0]
+      })
   }
 }
 

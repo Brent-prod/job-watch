@@ -1,9 +1,9 @@
-function renderAddJob() {
+function renderEditJob() {
   document.querySelector('#page').innerHTML = `
   <section class="job">
-    <h1>Add Job</h1>
+    <h1>Edit Job</h1>
 
-    <form onsubmit="createJob(event)">
+    <form onsubmit="editJob(event)">
       <section id="error"></section>
 
       <fieldset>
@@ -50,19 +50,19 @@ function renderAddJob() {
 
     </form>
   </section>
-  `
+`
 }
 
-function createJob(event) {
+function editJob(event) {
   event.preventDefault()
   const form = event.target
 
   const data = Object.fromEntries(new FormData(form))
 
-  axios.post('/api/jobs', data)
+  axios.patch('/api/jobs/', data)
     .then(successResponse => {
-      const newJob = successResponse.data
-      state.jobs.push(newJob)
+      const updatedJob = successResponse.data
+      console.log(updatedJob)
     })
     .catch(errorResponse => {
       document.querySelector('#error')
@@ -70,7 +70,7 @@ function createJob(event) {
     })
 }
 
-renderAddJob()
+renderEditJob()
 
 // Could use renderAddJob to hand both create and update actions
 // function addOrEdit(action) {
