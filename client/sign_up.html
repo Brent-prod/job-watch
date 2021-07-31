@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Job Watch</title>
+
+   
+
+</head>
+<body>
+
+   <section class='sign-up'>
+      <h1>Job Watch</h1>
+      <form id='sign-up-form' action='/users' method='POST'>
+        <section id="errors"></section>
+        <fieldset>
+          <label for="">Name:</label><br>
+          <input type="text" name='name'>
+        </fieldset>
+        <fieldset>
+          <label for="">Email:</label><br>
+          <input type="text" name='email'>
+        </fieldset>
+        <fieldset>
+          <label for="">Password:</label><br>
+          <input type="password" name='password'>
+        </fieldset>
+        <button>Sign up</button>
+      </form>
+    </section>
+
+    <script type='text/javascript' src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" async></script>
+    
+    <script>
+      
+      const signUpForm = document.querySelector('#sign-up-form')
+  
+      signUpForm.addEventListener('submit', event => {
+        event.preventDefault();
+        const data = Object.fromEntries(new FormData(signUpForm));
+        axios.post('/api/users', data)
+          .then(successResponse => window.location = '/')
+          .catch(errorResponse => {
+            console.log(errorResponse);
+            document.querySelector('#errors')
+              .innerHTML = errorResponse.response.data.message;
+          });
+      })
+    </script>
+
+   
+</body>
+</html>
