@@ -57,7 +57,8 @@ function editJob(event) {
   event.preventDefault()
   const form = event.target
 
-
+  const id = window.location.pathname.split("/").splice(2)[0]
+  console.log(id)
 
   const data = Object.fromEntries(new FormData(form))
 
