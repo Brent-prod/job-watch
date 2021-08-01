@@ -10,7 +10,8 @@ const User = {
       VALUES($1, $2, $3)
       RETURNING *
     `;
-		return db.query(sql, [ name, email, password_digest ]).then((dbResponse) => {
+		return db.query(sql, [ name, email, password_digest ])
+			.then((dbResponse) => {
 			return dbResponse.rows[0];
 		});
 	}
