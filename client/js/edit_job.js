@@ -57,9 +57,11 @@ function editJob(event) {
   event.preventDefault()
   const form = event.target
 
+
+
   const data = Object.fromEntries(new FormData(form))
 
-  axios.patch('/api/jobs/', data)
+  axios.patch(`/api/jobs/${id}`, data) // need to get id from where
     .then(successResponse => {
       const updatedJob = successResponse.data
       console.log(updatedJob)

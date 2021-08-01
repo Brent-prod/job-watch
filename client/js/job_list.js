@@ -16,7 +16,7 @@ function showJobs() {
       <h2>${job.role} - ${job.company}</h2>
       <ul>
         <li><span class="material-icons delete-job" onClick="deleteJob(event)">delete job</span></li>
-        <li><span class="material-icons edit-job"><a href="/edit_job.html">Edit job</a></span></li>
+        <li><span class="material-icons edit-job"><a href="/jobs/${job.id}">Edit job</a></span></li>
       </ul>
     </header>
     <ul>
@@ -41,7 +41,3 @@ function deleteJob(event) {
     })
 }
 
-function updateJob(event) {
-  event.preventDefault()
-  
-}

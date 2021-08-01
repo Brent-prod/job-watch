@@ -5,6 +5,7 @@ const express = require('express');
 const app = express();
 const session = require('express-session');
 
+
 // const sess = {
 //   secret: process.env.SESSION_SECRET,
 //   cookie : {}
@@ -21,6 +22,7 @@ const errorHandler = require('./middlewares/error_handler');
 const jobsController = require('./controllers/jobs_controller.js');
 const usersController = require('./controllers/users_controller.js');
 
+app.set('view engine', 'ejs')
 app.use(express.json());
 app.use('/api/jobs', jobsController);
 app.use(errorHandler);
@@ -45,7 +47,9 @@ app.use('/api/users', usersController);
 
 app.get('/index.html', (req, res) => res.send('hello'));
 app.listen(port, () => console.log(`server listening on port: ${port}`));
-
+app.get('/jobs/:id',  (req, res) =>
+  res.render('edit_job')
+)
 // app.use(logger)
 
 // (middleware) builtin mini router for static files
