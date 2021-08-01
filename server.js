@@ -45,11 +45,9 @@ app.use('/api/users', usersController);
 //   }
 // })
 
-app.get('/index.html', (req, res) => res.send('hello'));
-app.listen(port, () => console.log(`server listening on port: ${port}`));
-app.get('/jobs/:id',  (req, res) =>
-  res.render('edit_job')
-)
+app.get('/index.html', (req, res) => res.send('hello'))
+app.listen(port, () => console.log(`server listening on port: ${port}`))
+app.get('/jobs/:id',  (req, res) => res.render('edit_job'))
 // app.use(logger)
 
 // (middleware) builtin mini router for static files

@@ -1,4 +1,8 @@
 function renderEditJob() {
+  const id = window.location.pathname.split("/").splice(2)[0]
+
+  const selectedJob = state.jobs.filter(job => job.id === id)
+
   document.querySelector('#page').innerHTML = `
   <section class="job">
     <h1>Edit Job</h1>
@@ -8,37 +12,36 @@ function renderEditJob() {
 
       <fieldset>
         <label for="">Role:</label>
-        <input type="text" name="role">
+        <input type="text" name="role" value=${selectedJob.role}>
       </fieldset>
 
       <fieldset>
         <label for="">Company:</label>
-        <input type="text" name="company">
+        <input type="text" name="company" value=${selectedJob.company}>
       </fieldset>
       
       <fieldset>
         <label for="">Link to ad:</label>
-        <input type="text" name="link">
+        <input type="text" name="link" value=${selectedJob.link}>
       </fieldset>
 
       <fieldset>
         <label for="">Close date:</label>
-        <input type="date" name="date">
+        <input type="date" name="date" value=${selectedJob.date}>
       </fieldset>
 
       <fieldset>
         <label for="">Contact person:</label>
-        <input type="text" name="contact">
+        <input type="text" name="contact" value=${selectedJob.contact}>
       </fieldset>
 
       <fieldset>
         <label for="">Notes:</label>
-        <textarea name="notes" id="" cols="30" rows="10"></textarea>
+        <textarea name="notes" id="" cols="30" rows="10" value=${selectedJob.notes}></textarea>
       </fieldset>
 
       <fieldset>
         <label for="">Status:</label>
-
         <input type="radio" id="Completed" name="status" value="Completed">
         <label for="completed">Completed</label><br>
 

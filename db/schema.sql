@@ -5,6 +5,7 @@ CREATE TABLE jobs(
   id SERIAL PRIMARY KEY,
   role TEXT,
   company TEXT,
+  link TEXT,
   close_date DATE,
   contact TEXT,
   notes TEXT,
