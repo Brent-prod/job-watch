@@ -42,4 +42,12 @@ router.patch('/:id', (req, res) => {
 
 })
 
+
+router.delete('/:id', (req, res) => {
+  Job.delete(req.params.id)
+    .then(() => {
+      res.json({deleted : `job with id ${req.params.id}`})
+    })
+})
+
 module.exports = router

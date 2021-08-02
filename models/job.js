@@ -47,6 +47,14 @@ const Job = {
       .then(dbResponse => {
         return dbResponse.rows[0]
       })
+  },
+
+  delete(id) {
+    const sql = `
+      DELETE FROM jobs
+      WHERE id = $1
+    `
+    return db.query(sql, [id])
   }
 }
 

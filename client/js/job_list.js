@@ -33,12 +33,15 @@ function deleteJob(event) {
   const deleteButton = event.target
   const jobDom = deleteButton.closest('.job')
   const jobId = jobDom.dataset.id
-
+  console.log(event.target)
+  console.log(jobId)
   axios.delete(`/api/jobs/${jobId}`)
-    .then(resp => {
+    .then(() => {
       jobDom.remove()
-      resp.json({deleted : `treasure ID ${jobId}`})
+      // resp.json({deleted : `treasure ID ${jobId}`})
+    })
+    .catch(error => {
+      console.log(error)
     })
 }
 
-renderJobsList()

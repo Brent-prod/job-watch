@@ -1,12 +1,18 @@
-function getJobData() {
+// function getJobData() {
 
-  axios.get('/api/jobs')
-    .then(response => {
-      state.jobs = response.data
-    })
-    .then(renderEditJob)
+//   axios.get('/api/jobs')
+//     .then(response => {
+//       state.jobs = response.data
+//     })
+//     .then(renderEditJob)
 
-}
+//     // return axios.get('/api/jobs')
+//     // .then(response => {
+//     //   state.jobs = response.data
+//     // })
+
+// }
+
 
 function renderEditJob() {
   const id = window.location.pathname.split("/").splice(2)[0]
@@ -85,7 +91,8 @@ function editJob(event) {
     })
 }
 
-getJobData()
+getJob().then(renderEditJob)
+// getJobData()
 
 
 // Could use renderAddJob to hand both create and update actions
