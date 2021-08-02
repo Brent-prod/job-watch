@@ -71,12 +71,3 @@ function createJob(event) {
 }
 
 renderAddJob()
-
-// Could use renderAddJob to hand both create and update actions
-// function addOrEdit(action) {
-//   if (action === "edit") {
-//     return "editJob(event)"
-//   } else {
-//     return "createJob(event)"
-//   }
-// }

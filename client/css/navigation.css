@@ -1,0 +1,37 @@
+/* navigation */
+.header-nav nav {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.header-nav nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 0;
+}
+
+.header-nav nav li {
+  padding: 0 0.3em;
+}
+
+.material-icons {
+  cursor: pointer;
+}
+
+.material-icons.work {
+  color: rgb(9, 51, 98);
+}
+
+
+/* 768px is the iPad in portrait mode */
+@media only screen and (min-width: 768px) {
+  .header-nav {
+    width: 90%;
+  }
+
+  .header-nav nav li {
+    padding: 0 1em;
+  }
+}

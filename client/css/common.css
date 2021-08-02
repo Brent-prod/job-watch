@@ -1,0 +1,23 @@
+/* Common */
+* {
+  /* to include padding & border in width & heigher calculations */
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.header-nav, .content {
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+.hide {
+  display: none;
+}
+
+#errors {
+  font-weight: bold;
+  color: red;
+}

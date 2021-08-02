@@ -1,13 +1,19 @@
 function renderHeaderNav() {
-  document.querySelector('#header-nav').innerHTML = `
+  document.querySelector("#header-nav").innerHTML = `
   <nav>
-  <h1>JobWatch - Eyes on the Prize</h1>
+    <h1>JobWatch - Eyes on the Prize</h1>
 
-  <ul>
-    <li class="material-icons jobs" onclick="render('jobList')"></li> 
-  </ul>
-</nav>
-  `
+    <ul>
+      <li class="material-icons work" onclick="render('jobList')">work</li> 
+    </ul>
+  </nav>
+  `;
 }
 
-renderHeaderNav()
+renderHeaderNav();
+
+function render(component) {
+  if (component === "jobList") {
+    renderAddJob();
+  }
+}
