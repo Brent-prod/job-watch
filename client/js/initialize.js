@@ -4,11 +4,11 @@ const state = {
   jobs: []
 }
 
-function getJob() {
-  axios.get('/api/jobs')
-  .then(response => {
-    state.jobs = response.data
-  })
-}
+// function getJob() {
+//   axios.get('/api/jobs')
+//   .then(response => {
+//     state.jobs = response.data
+//   })
+// }
 
-getJob()
+// getJob()

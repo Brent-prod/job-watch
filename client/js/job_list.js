@@ -41,3 +41,4 @@ function deleteJob(event) {
     })
 }
 
+renderJobsList()

@@ -1,8 +1,17 @@
+function getJobData() {
+
+  axios.get('/api/jobs')
+    .then(response => {
+      state.jobs = response.data
+    })
+    .then(renderEditJob)
+
+}
+
 function renderEditJob() {
   const id = window.location.pathname.split("/").splice(2)[0]
-
-  const selectedJob = state.jobs.filter(job => job.id === id)
-
+  const selectedJob = state.jobs.find(job => job.id == id)
+  console.log(selectedJob)
   document.querySelector('#page').innerHTML = `
   <section class="job">
     <h1>Edit Job</h1>
@@ -53,7 +62,7 @@ function renderEditJob() {
 
     </form>
   </section>
-`
+  `
 }
 
 function editJob(event) {
@@ -76,7 +85,8 @@ function editJob(event) {
     })
 }
 
-renderEditJob()
+getJobData()
+
 
 // Could use renderAddJob to hand both create and update actions
 // function addOrEdit(action) {
