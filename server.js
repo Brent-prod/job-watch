@@ -22,14 +22,16 @@ const errorHandler = require('./middlewares/error_handler');
 
 const jobsController = require('./controllers/jobs_controller.js');
 const usersController = require('./controllers/users_controller.js');
+const sessionsController = require('./controllers/sessions_controller')
 
 app.use(express.json());
 app.use('/api/jobs', jobsController);
 
 app.use(express.static('client'));
 app.use('/api/users', usersController);
-app.use(session(sessionConfig));
 
+app.use(session(sessionConfig));
+app.use('/api/sessions', sessionsController)
 
 app.get('/index.html', (req, res) => res.send('hello'));
 app.listen(port, () => console.log(`server listening on port: ${port}`));

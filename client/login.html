@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1 id="header">Log In</h1>
+
+    <form id="login">
+        <input type="text" name="name" placeholder="Name">
+        <input type="text" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" value="Log in">
+    </form>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        const form = document.querySelector('#login')
+        form.addEventListener('submit', event => {
+            event.preventDefault();
+            const data = Object.fromEntries(new FormData(form));
+            // console.log(data)
+            axios.post('/api/sessions', data)
+            .then(sessionInfo => {
+                console.log(sessionInfo);
+                if (sessionInfo.data.error) {
+                    // Update DOM to display error message
+                } else {
+                    window.location = '/'
+                }
+            })
+            .then(successResponse => window.location = '/show_job.html')
+            .catch(err => console.log(err.response.data.error))
+        })
+
+    </script>
+
+</body>
+
+</html>

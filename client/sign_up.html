@@ -6,8 +6,6 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Job Watch</title>
 
-   
-
 </head>
 <body>
 
@@ -40,6 +38,7 @@
       signUpForm.addEventListener('submit', event => {
         event.preventDefault();
         const data = Object.fromEntries(new FormData(signUpForm));
+        // console.log(data)
         axios.post('/api/users', data)
           .then(successResponse => window.location = '/show_job.html')
           .catch(errorResponse => {
