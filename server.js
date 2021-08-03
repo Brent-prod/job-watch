@@ -48,13 +48,4 @@ app.use('/api/users', usersController);
 app.get('/index.html', (req, res) => res.send('hello'))
 app.listen(port, () => console.log(`server listening on port: ${port}`))
 app.get('/jobs/:id',  (req, res) => res.render('edit_job'))
-// app.use(logger)
-
-// (middleware) builtin mini router for static files
-
-// parse JSON Body to req.body
-
-// routes (middleware)
-
-//--handle any errors that are thrown _anywhere_ in the stack of middlewares
-//  app.use(errorHandler);
+app.use(logger)
