@@ -6,13 +6,11 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Job Watch</title>
 
-   
-
 </head>
 <body>
 
    <section class='sign-up'>
-      <h1>Job Watch</h1>
+      <h1>Sign Up</h1>
       <form id='sign-up-form' action='/users' method='POST'>
         <section id="errors"></section>
         <fieldset>
@@ -40,8 +38,9 @@
       signUpForm.addEventListener('submit', event => {
         event.preventDefault();
         const data = Object.fromEntries(new FormData(signUpForm));
+        // console.log(data)
         axios.post('/api/users', data)
-          .then(successResponse => window.location = '/')
+          .then(successResponse => window.location = '/show_job.html')
           .catch(errorResponse => {
             console.log(errorResponse);
             document.querySelector('#errors')
