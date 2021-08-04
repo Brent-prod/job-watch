@@ -31,7 +31,6 @@ const User = {
 
 		return db.query(sql, [id])
 			.then(dbResponse => {
-				console.log(dbResponse.rows[0])
 				return dbResponse.rows[0]
 			});
 	}

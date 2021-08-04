@@ -14,15 +14,17 @@ function getJob() {
 
 getJob()
 
-function getUser() {
+// function getUser() {
     axios.get('/api/sessions')
     .then(sessionInfo => {
-      if (sessionInfo.data.userId){
+      // console.log("sessionInfo @ initialize.js " + sessionInfo.data.userName)
+      if (sessionInfo.data.userName){
+        // console.log("sessionInfo.data.userId @ initialize.js is " + sessionInfo.data.userName)
         // if logged in
-        state.userId = sessionInfo.data.userId;
-        console.log(state.userId)
+        state.user = sessionInfo.data.userName;
+        // console.log("state.user.Id "+state.user)
           document.querySelector('#userName')
-          .innerHTML = sessionInfo.data.userId + ' is logged in ' + '<br><button id="logout">Logout</button>'
+          .innerHTML = sessionInfo.data.userName + ' is logged in ' + '<br><button id="logout">Logout</button>'
 
           // to make a delete request to log out a user
           document.querySelector('#logout').addEventListener('click', event => {
@@ -36,6 +38,6 @@ function getUser() {
           .innerHTML = 'please login <br><a href="/login.html">Login</a> '
       }
     })
-  }
+  // }
 
-  getUser()
+  // getUser()
