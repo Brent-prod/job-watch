@@ -38,11 +38,9 @@
       signUpForm.addEventListener('submit', event => {
         event.preventDefault();
         const data = Object.fromEntries(new FormData(signUpForm));
-        // console.log(data)
         axios.post('/api/users', data)
           .then(successResponse => window.location = '/show_job.html')
           .catch(errorResponse => {
-            console.log(errorResponse);
             document.querySelector('#errors')
               .innerHTML = errorResponse.response.data.message;
           });

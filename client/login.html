@@ -25,17 +25,15 @@
         form.addEventListener('submit', event => {
             event.preventDefault();
             const data = Object.fromEntries(new FormData(form));
-            // console.log(data)
             axios.post('/api/sessions', data)
             .then(sessionInfo => {
-                console.log(sessionInfo);
                 if (sessionInfo.data.error) {
                     // Update DOM to display error message
                 } else {
                     window.location = '/'
                 }
             })
-            .then(successResponse => window.location = '/show_job.html')
+            .then(successResponse => window.location = '/index.html')
             .catch(err => console.log(err.response.data.error))
         })
 
