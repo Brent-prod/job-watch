@@ -5,20 +5,12 @@ const express = require('express');
 const app = express();
 const session = require('express-session');
 
-<<<<<<< HEAD
-
-// const sess = {
-//   secret: process.env.SESSION_SECRET,
-//   cookie : {}
-// }
-=======
 const sessionConfig = {
   secret: process.env.SESSION_SECRET,
   cookie: {},
   saveUninitialized: false,
   resave: false,
 }
->>>>>>> 4089624bb88df23c9a8f3e1c7b6cab7d041b2a25
 
 if (process.env.NODE_ENV === 'production') {
   sessionConfig.cookie.secure = true
@@ -45,9 +37,8 @@ app.use('/api/sessions', sessionsController)
 app.get('/index.html', (req, res) => res.send('hello'))
 app.listen(port, () => console.log(`server listening on port: ${port}`))
 app.get('/jobs/:id',  (req, res) => res.render('edit_job'))
-app.use(logger)
+// app.use(logger)
 app.get('/index.html', (req, res) => res.send('hello'));
-app.listen(port, () => console.log(`server listening on port: ${port}`));
 
 //--handle any errors that are thrown _anywhere_ in the stack of middlewares
 app.use(errorHandler);

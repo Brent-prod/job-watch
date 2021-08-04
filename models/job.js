@@ -13,7 +13,7 @@ const Job = {
       })
   },
 
-  findAll() {
+  findAllByUser() {
     const sql = "SELECT * FROM jobs"
     return db.query(sql)
       .then(dbRes => dbRes.rows)

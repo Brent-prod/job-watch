@@ -18,6 +18,7 @@ function renderEditJob() {
   const id = window.location.pathname.split("/").splice(2)[0]
   const selectedJob = state.jobs.find(job => job.id == id)
   console.log(selectedJob)
+  console.log(selectedJob.date)
   document.querySelector('#page').innerHTML = `
   <section class="job">
     <h1>Edit Job</h1>
