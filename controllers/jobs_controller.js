@@ -5,7 +5,7 @@ const Job = require('../models/job')
 
 router.get('/', (req, res) => {
   Job
-    .findAllByUser()
+    .findAllByUser(req.session.userId)
     .then(jobs => res.json(jobs))
 })
 
@@ -18,8 +18,9 @@ router.post('/', (req, res) => {
   const contact_person = req.body.contact
   const notes = req.body.notes
   const status = req.body.status
+  const userId = req.session.userId
 
-  Job.create(role, company, ad_link, close_date, contact_person, notes, status)
+  Job.create(userId, role, company, ad_link, close_date, contact_person, notes, status)
     .then(job => {
       res.json(job)
     })

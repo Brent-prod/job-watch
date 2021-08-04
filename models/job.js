@@ -1,21 +1,21 @@
 const db = require('../db/db')
 
 const Job = {
-  create(role, company, link, close_date, contact, notes, status) {
+  create(userId, role, company, link, close_date, contact, notes, status) {
     const sql = `
-      INSERT INTO jobs(role, company, link, close_date, contact, notes, status)
+      INSERT INTO jobs(userId, role, company, link, close_date, contact, notes, status)
       VALUES($1, $2, $3, $4, $5, $6, $7)
       RETURNING *
     `
-    return db.query(sql, [role, company, link, close_date, contact, notes, status])
+    return db.query(sql, [userId, role, company, link, close_date, contact, notes, status])
       .then(dbResponse => {
         return dbResponse.rows[0]
       })
   },
 
-  findAllByUser() {
-    const sql = "SELECT * FROM jobs"
-    return db.query(sql)
+  findAllByUser(userId) {
+    const sql = "SELECT * FROM jobs WHERE userId = $1"
+    return db.query(sql, [userId])
       .then(dbRes => dbRes.rows)
   },
 

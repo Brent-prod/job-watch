@@ -17,6 +17,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const port = process.env.PORT || 4567;
+app.listen(port)
 
 const errorHandler = require('./middlewares/error_handler');
 
