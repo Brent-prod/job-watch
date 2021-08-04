@@ -37,9 +37,8 @@ app.use('/api/sessions', sessionsController)
 app.get('/index.html', (req, res) => res.send('hello'))
 app.listen(port, () => console.log(`server listening on port: ${port}`))
 app.get('/jobs/:id',  (req, res) => res.render('edit_job'))
-app.use(logger)
+// app.use(logger)
 app.get('/index.html', (req, res) => res.send('hello'));
-app.listen(port, () => console.log(`server listening on port: ${port}`));
 
 //--handle any errors that are thrown _anywhere_ in the stack of middlewares
 app.use(errorHandler);

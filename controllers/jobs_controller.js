@@ -5,7 +5,7 @@ const Job = require('../models/job')
 
 router.get('/', (req, res) => {
   Job
-    .findAll()
+    .findAllByUser()
     .then(jobs => res.json(jobs))
 })
 
