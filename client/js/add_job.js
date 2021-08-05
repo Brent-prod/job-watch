@@ -3,7 +3,7 @@ function renderAddJob() {
   <section class="job">
     <h1>Add Job</h1>
 
-    <form onsubmit="createJob(event)">
+    <form id="add-job" onsubmit="createJob(event)">
       <section id="error"></section>
 
       <fieldset>

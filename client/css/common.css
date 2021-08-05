@@ -3,16 +3,25 @@
   /* to include padding & border in width & heigher calculations */
   box-sizing: border-box;
 }
+h1 {
+  font-family: 'Signika', sans-serif;
+}
 
 body {
   margin: 0;
 }
 
-.header-nav, .content {
+.header-nav {
   margin: 0 auto;
   padding: 0 1em;
 }
 
+.content {
+  margin-left: 100px;
+}
+/* .job {
+  display: block;
+} */
 .hide {
   display: none;
 }
