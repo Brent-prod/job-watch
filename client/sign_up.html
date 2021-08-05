@@ -39,7 +39,7 @@
         event.preventDefault();
         const data = Object.fromEntries(new FormData(signUpForm));
         axios.post('/api/users', data)
-          .then(successResponse => window.location = '/show_job.html')
+          .then(successResponse => window.location = '/')
           .catch(errorResponse => {
             document.querySelector('#errors')
               .innerHTML = errorResponse.response.data.message;
