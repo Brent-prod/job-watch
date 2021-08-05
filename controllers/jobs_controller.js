@@ -4,6 +4,7 @@ const router = express.Router()
 const Job = require('../models/job')
 
 router.get('/', (req, res) => {
+  console.log(req.sessionID)
   Job
     .findAllByUser(req.session.userId)
     .then(jobs => res.json(jobs))

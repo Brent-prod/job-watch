@@ -35,6 +35,7 @@ app.use('/api/users', usersController);
 app.use(session(sessionConfig));
 app.use('/api/sessions', sessionsController)
 
+// app.get('/', (req, res) => res.sendFile('./client/index.html'))
 app.get('/jobs/:id',  (req, res) => res.render('edit_job'))
 // app.use(logger)
 app.get('/index.html', (req, res) => res.send('hello'));
