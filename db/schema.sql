@@ -3,8 +3,12 @@ CREATE DATABASE jobwatch;
 
 CREATE TABLE jobs(
   id SERIAL PRIMARY KEY,
+<<<<<<< HEAD
   userId INTEGER,
   FOREIGN KEY (userId) REFERENCES users(id) ON DELETE CASCADE,
+=======
+  FOREIGN KEY (userId) REFERENCES user(id) ON DELETE CASCADE;
+>>>>>>> 08b738d (session completed)
   role TEXT,
   company TEXT,
   link TEXT,
