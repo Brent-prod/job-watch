@@ -3,6 +3,7 @@
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
+  margin-top: 30px;
 }
 
 .header-nav nav ul {

@@ -1,7 +1,7 @@
 function renderHeaderNav() {
   document.querySelector("#header-nav").innerHTML = `
   <nav>
-    <h1>Welcome to JobWatch</h1>
+    <h1>JobWatch</h1>
 
     <ul>
     <li id="button" class="material-icons work" >work</li> 
@@ -23,8 +23,7 @@ function render(component) {
 const button = document.querySelector('#button')
 let clicked = false
 
-button.addEventListener('click', (event) => {
-  console.log(event)
+button.addEventListener('click', () => {
   if (clicked) {
     render("jobList")
     clicked = false
