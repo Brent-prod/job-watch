@@ -1,14 +1,16 @@
 function renderHeaderNav() {
   document.querySelector("#header-nav").innerHTML = `
   <nav>
-    <h1>JobWatch - Eyes on the Prize</h1>
+    <h1>JobWatch</h1>
 
     <ul>
-      <li class="material-icons work" onclick="render('jobList')">work</li> 
+    <li id="button" class="material-icons work" >work</li> 
+
     </ul>
   </nav>
   `;
 }
+// <li id="button" class="material-icons work" onclick="render('jobList')">work</li> 
 
 renderHeaderNav();
 
@@ -17,3 +19,18 @@ function render(component) {
     renderAddJob();
   }
 }
+
+const button = document.querySelector('#button')
+let clicked = false
+
+button.addEventListener('click', () => {
+  if (clicked) {
+    render("jobList")
+    clicked = false
+
+  } else {
+    document.querySelector('#page').innerHTML = ""
+    clicked = true
+  }
+})
+
