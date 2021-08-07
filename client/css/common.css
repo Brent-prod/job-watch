@@ -3,17 +3,17 @@
   /* to include padding & border in width & heigher calculations */
   box-sizing: border-box;
 }
-h1, h2 {
-  font-family: 'Signika', sans-serif;
+h1,
+h2 {
+  font-family: "Signika", sans-serif;
 }
 h1 {
   font-size: 40px;
-
 }
 body {
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
-  background-color: #fcfcfc
+  font-family: "Open Sans", sans-serif;
+  background-color: #fcfcfc;
 }
 
 .header-nav {
@@ -32,4 +32,10 @@ body {
 #errors {
   font-weight: bold;
   color: red;
+}
+
+/* job list */
+.job-list {
+  display: flex;
+  flex-direction: column;
 }
