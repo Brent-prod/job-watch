@@ -25,8 +25,9 @@ router.get('/', (req, res) => {
     .then(user => {
       if (user == undefined) {
         res.json({ error: "Please login or sign up" })
+      } else {
+        res.json({ userName: user.name })
       }
-      res.json({ userName: user.name })
     })
 });
 
