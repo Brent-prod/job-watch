@@ -11,7 +11,7 @@
 
    <section class='sign-up'>
       <h1>Sign Up</h1>
-      <form id='sign-up-form' action='/users' method='POST'>
+      <form id='sign-up-form' method='POST'>
         <section id="errors"></section>
         <fieldset>
           <label for="">Name:</label><br>
@@ -39,10 +39,12 @@
         event.preventDefault();
         const data = Object.fromEntries(new FormData(signUpForm));
         axios.post('/api/users', data)
-          .then(successResponse => window.location = '/')
+          .then(successResponse => {  
+            window.location = '/'})
           .catch(errorResponse => {
-            document.querySelector('#errors')
-              .innerHTML = errorResponse.response.data.message;
+            console.log(errorResponse)
+            // document.querySelector('#errors')
+            //   .innerHTML = errorResponse.response.data.message;
           });
       })
     </script>

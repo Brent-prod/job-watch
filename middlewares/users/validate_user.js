@@ -19,7 +19,7 @@ function validateUser(req, res, next) {
     throw validationError("Password is required");
   }
   else if (password.length < 3) {
-    throw validationError("Password must be at least 8 characters");
+    throw validationError("Password must be at least 3 characters");
   }
 
   next();
