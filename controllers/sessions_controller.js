@@ -11,7 +11,7 @@ router.post('/', validateUser, (req, res) => {
        .then(user => {
            if (user && bcryptjs.compareSync(req.body.password, user.password_digest)) {
                req.session.userId = user.id;
-               console.log(req.session);
+            //    console.log(req.session);
                res.json(req.session);
            } else {
                // Error, user not found or wrong password
