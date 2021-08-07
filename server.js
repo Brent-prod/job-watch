@@ -14,6 +14,7 @@ const sessionConfig = {
 
 if (process.env.NODE_ENV === 'production') {
   sessionConfig.cookie.secure = true
+  app.set('trust proxy', 1)
 }
 
 const port = process.env.PORT || 4567;
