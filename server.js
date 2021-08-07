@@ -6,7 +6,7 @@ const app = express();
 const session = require('express-session');
 
 const sessionConfig = {
-  secret: process.env.SESSION_SECRET || 'verysecret',
+  secret: process.env.SESSION_SECRET,
   cookie: {},
   saveUninitialized: false,
   resave: false,
