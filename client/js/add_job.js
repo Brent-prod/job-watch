@@ -7,11 +7,6 @@ function renderAddJob() {
       <section id="error"></section>
 
       <fieldset>
-        <label for="">userId:</label>
-        <input type="text" name="userId">
-      </fieldset>
-
-      <fieldset>
         <label for="">Role:</label>
         <input type="text" name="role">
       </fieldset>
