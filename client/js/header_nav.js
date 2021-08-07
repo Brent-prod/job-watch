@@ -4,13 +4,12 @@ function renderHeaderNav() {
     <h1>JobWatch</h1>
 
     <ul>
-      <li class="material-icons work" onclick="render('addJob')">work</li> 
+      <li class="material-icons work" id="button" onclick="render('addJob')">work</li> 
       <li class="material-icons list" onclick="render('jobList')">list</li> 
     </ul>
   </nav>
   `;
 }
-// <li id="button" class="material-icons work" onclick="render('jobList')">work</li> 
 
 renderHeaderNav();
 
@@ -27,7 +26,7 @@ let clicked = false
 
 button.addEventListener('click', () => {
   if (clicked) {
-    render("jobList")
+    render("addJob")
     clicked = false
 
   } else {
@@ -35,4 +34,3 @@ button.addEventListener('click', () => {
     clicked = true
   }
 })
-
