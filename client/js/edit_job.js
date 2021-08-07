@@ -84,8 +84,8 @@ function editJob(event) {
   axios.patch(`/api/jobs/${id}`, data) // need to get id from where
     .then(successResponse => {
       const updatedJob = successResponse.data
-      // console.log(updatedJob)
     })
+    .then(() => window.location = '/')
     .catch(errorResponse => {
       document.querySelector('#error')
         .innerHTML = errorResponse.response.data.message

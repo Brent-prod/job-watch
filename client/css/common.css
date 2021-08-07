@@ -11,9 +11,10 @@ h1 {
   font-size: 40px;
 }
 body {
-  margin: 0;
+  margin: 0 auto;
   font-family: "Open Sans", sans-serif;
   background-color: #fcfcfc;
+  max-width: 800px;
 }
 
 .header-nav {
@@ -36,12 +37,25 @@ body {
 
 /* job list & columns */
 
+
 .job-columns{
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  max-width: 800px;
+  grid-template-columns: 1fr 1fr;
 }
 
-.job-list {
+.job-list-completed {
   display: flex;
   flex-direction: column;
+  max-width: 25%;
+}
+
+.job-list-incomplete {
+  display: flex;
+  flex-direction: column;
+  max-width: 25%;
+}
+
+.job {
+  max-width: 100%;
 }

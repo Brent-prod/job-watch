@@ -37,6 +37,7 @@ router.patch('/:id', (req, res) => {
   const notes = req.body.notes
   const status = req.body.status
   const id = req.params.id
+  console.log(close_date)
 
   Job.edit(role, company, ad_link, close_date, contact_person, notes, status, id)
     .then(job => {
