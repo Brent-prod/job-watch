@@ -1,19 +1,3 @@
-// function getJobData() {
-
-//   axios.get('/api/jobs')
-//     .then(response => {
-//       state.jobs = response.data
-//     })
-//     .then(renderEditJob)
-
-//     // return axios.get('/api/jobs')
-//     // .then(response => {
-//     //   state.jobs = response.data
-//     // })
-
-// }
-
-
 function renderEditJob() {
   const id = window.location.pathname.split("/").splice(2)[0]
   const selectedJob = state.jobs.find(job => job.id == id)
@@ -42,7 +26,7 @@ function renderEditJob() {
 
       <fieldset>
         <label for="">Close date:</label>
-        <input type="date" name="date" value=${selectedJob.date}>
+        <input type="date" name="date" value=${selectedJob.close_date.slice(0,10)}>
       </fieldset>
 
       <fieldset>
@@ -52,19 +36,19 @@ function renderEditJob() {
 
       <fieldset>
         <label for="">Notes:</label>
-        <textarea name="notes" id="" cols="30" rows="10" value=${selectedJob.notes}></textarea>
+        <textarea name="notes" id="notes" cols="30" rows="10" value=${selectedJob.notes}></textarea>
       </fieldset>
 
       <fieldset>
         <ul>
           <li>
-            <input type="radio" name="status" value="Completed">
-            <label for="completed" id="completed">Completed</label><br>
+            <input type="radio" name="status" value="Completed" id="completed">
+            <label for="completed">Completed</label><br>
           </li>
 
           <li>
-            <input type="radio" name="status" value="Incomplete">
-            <label for="incomplete" id="incomplete">Incomplete</label>
+            <input type="radio" name="status" value="Incomplete" id="incomplete">
+            <label for="incomplete" >Incomplete</label>
           </li>
         </ul>
       </fieldset>
@@ -74,8 +58,14 @@ function renderEditJob() {
     </form>
   </section>
   `
-  console.log(selectedJob)
-  console.log(selectedJob.date)
+
+  document.querySelector('#notes').innerHTML = selectedJob.notes
+
+  if (selectedJob.status.toLowerCase() === "completed") {
+    document.querySelector("#completed").checked = true
+  } else {
+    document.querySelector("#incomplete").checked = true
+  }
 }
 
 function editJob(event) {
