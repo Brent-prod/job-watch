@@ -34,7 +34,13 @@ body {
   color: red;
 }
 
-/* job list */
+/* job list & columns */
+
+.job-columns{
+  display: flex;
+  flex-direction: row;
+}
+
 .job-list {
   display: flex;
   flex-direction: column;

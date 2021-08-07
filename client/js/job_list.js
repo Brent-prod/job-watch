@@ -3,21 +3,24 @@
 // RUN THIS FUNCTION WHEN HEADER NAVIGATION BUTTON IS CLICKED!!!!
 function renderJobsList() {
   document.querySelector('#page').innerHTML = `
-  <section class="job-list">
-    ${showJobs()}
+  <section class="job-columns">
+    <div class="job-list">
+      ${showJobs()}
+    </div>
   </section>
   `
 }
 
 function showJobs() {
   // make axios request to get all jobs by user
+  console.log(state.jobs)
   return state.jobs.map(job => `
   <section class="job" data-id=${job.id}>
     <header>
       <h2>${job.role} - ${job.company}</h2>
       <ul>
         <li><span class="material-icons delete-job" onClick="deleteJob(event)">delete job</span></li>
-        <li><span class="material-icons edit-job"><a href="/jobs/${job.id}">Edit job</a></span></li>
+        <li><span class="material-icons edit-job"><a href="/jobs/${job.id}">edit</a></span></li>
       </ul>
     </header>
     <ul>
