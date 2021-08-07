@@ -80,7 +80,7 @@ function createJob(event) {
       // hide addjob after posting the job
       document.querySelector('.job').innerHTML = "";
       // show jobslist
-
+      renderJobsList()
     })
     .catch(errorResponse => {
       document.querySelector('#error')
