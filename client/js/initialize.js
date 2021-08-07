@@ -29,7 +29,7 @@ function getUser() {
           // to make a delete request to log out a user
           document.querySelector('#logout').addEventListener('click', event => {
             axios.delete('/api/sessions').then(() => {
-              window.location.reload()
+              window.location = '/index.html'
             })
           })
           // if not logged in

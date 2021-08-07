@@ -1,10 +1,11 @@
 const express = require('express')
 const bcryptjs = require('bcryptjs')
 const router = express.Router()
-const User = require('../models/user')
+const User = require('../models/user');
+const validateUser = require('../middlewares/users/validate_user');
 
 // Login
-router.post('/', (req, res) => {
+router.post('/', validateUser, (req, res) => {
 
    User.findByEmail(req.body.email)
        .then(user => {

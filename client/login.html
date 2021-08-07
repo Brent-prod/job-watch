@@ -11,6 +11,7 @@
 
 <body>
     <h1 id="header">Log In</h1>
+    <h2 id="errors"></h2>
 
     <form id="login">
         <input type="text" name="name" placeholder="Name">
@@ -27,16 +28,22 @@
             const data = Object.fromEntries(new FormData(form));
             axios.post('/api/sessions', data)
             .then(sessionInfo => {
+                console.log(sessionInfo)
                 if (sessionInfo.data.error) {
+                    document.querySelector('#errors')
+                    .innerHTML = sessionInfo;
                     // Update DOM to display error message
                 } else {
                     window.location = '/'
                 }
             })
-            .then(successResponse => window.location = '/index.html')
-            .catch(err => console.log(err.response.data.error))
-        })
-
+            // .then(successResponse => window.location = '/')
+            // .catch(errorResponse => {
+            //     console.log(errorResponse)
+            // document.querySelector('#errors')
+            //   .innerHTML = errorResponse.response.data.message;
+        // })
+    })
     </script>
 
 </body>

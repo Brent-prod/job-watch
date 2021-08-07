@@ -35,16 +35,20 @@
       
       const signUpForm = document.querySelector('#sign-up-form')
   
-      signUpForm.addEventListener('submit', event => {
-        event.preventDefault();
-        const data = Object.fromEntries(new FormData(signUpForm));
-        axios.post('/api/users', data)
-          .then(successResponse => window.location = '/')
-          .catch(errorResponse => {
-            document.querySelector('#errors')
-              .innerHTML = errorResponse.response.data.message;
-          });
-      })
+      // signUpForm.addEventListener('submit', event => {
+      //   event.preventDefault();
+      //   const data = Object.fromEntries(new FormData(signUpForm));
+      //   axios.post('/api/users', data)
+      //   // .then(() => { return axios.post('/api/sessions', data)})
+      //     .then(successResponse => {  
+      //       // req.session.userId = user.id;
+      //       window.location = '/'})
+      //     .catch(errorResponse => {
+      //       console.log(errorResponse)
+      //       // document.querySelector('#errors')
+      //       //   .innerHTML = errorResponse.response.data.message;
+      //     });
+      // })
     </script>
 
    

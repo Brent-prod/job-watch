@@ -10,7 +10,7 @@ router.post('/', (req, res) => {
   User.createUser(
       req.body.name,
       req.body.email,
-      req.body.password
+      req.body.password,
   ).then(user => {
       res.json(user);
   });
