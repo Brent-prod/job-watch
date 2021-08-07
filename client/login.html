@@ -28,21 +28,13 @@
             const data = Object.fromEntries(new FormData(form));
             axios.post('/api/sessions', data)
             .then(sessionInfo => {
-                console.log(sessionInfo)
-                if (sessionInfo.data.error) {
-                    document.querySelector('#errors')
-                    .innerHTML = sessionInfo;
-                    // Update DOM to display error message
-                } else {
                     window.location = '/'
-                }
             })
-            // .then(successResponse => window.location = '/')
-            // .catch(errorResponse => {
-            //     console.log(errorResponse)
-            // document.querySelector('#errors')
-            //   .innerHTML = errorResponse.response.data.message;
-        // })
+            .catch(error => {
+                // console.log(error)
+                    document.querySelector('#errors')
+                        .innerHTML = error.response.data.error;
+        })
     })
     </script>
 

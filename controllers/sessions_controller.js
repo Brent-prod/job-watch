@@ -21,10 +21,11 @@ router.post('/', validateUser, (req, res) => {
 });
 
 router.get('/', (req, res) => {
-    // console.log(req.session)
    User.findByName(req.session.userId)
     .then(user => {
-        // console.log(res.json({ userName: user.name }))
+        if (user == undefined) {
+            res.json({error: "Please login or sign up"})  
+        }
         res.json({ userName: user['name'] })
     })
 });

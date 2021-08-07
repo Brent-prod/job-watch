@@ -5,7 +5,7 @@ function errorHandler(err, req, res, next) { // 4 parameters => error handler fu
 
   res.status(status)
     .json({
-      message: message
+      error: message
     })
 }
 
