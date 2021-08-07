@@ -3,6 +3,7 @@ const bcryptjs = require('bcryptjs')
 const router = express.Router()
 const User = require('../models/user');
 const validateUser = require('../middlewares/users/validate_user');
+const {createSession} = require('../helpers/sessions_helper')
 
 // Login
 router.post('/', validateUser, (req, res) => {
@@ -10,7 +11,7 @@ router.post('/', validateUser, (req, res) => {
   User.findByEmail(req.body.email)
     .then(user => {
       if (user && bcryptjs.compareSync(req.body.password, user.password_digest)) {
-        req.session.userId = user.id;
+        createSession(req, user);
         res.json(req.session);
       } else {
         // Error, user not found or wrong password
