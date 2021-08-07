@@ -10,6 +10,7 @@ function renderJobsList() {
 }
 
 function showJobs() {
+  // make axios request to get all jobs by user
   return state.jobs.map(job => `
   <section class="job" data-id=${job.id}>
     <header>
@@ -33,8 +34,8 @@ function deleteJob(event) {
   const deleteButton = event.target
   const jobDom = deleteButton.closest('.job')
   const jobId = jobDom.dataset.id
-  console.log(event.target)
-  console.log(jobId)
+  // console.log(event.target)
+  // console.log(jobId)
   axios.delete(`/api/jobs/${jobId}`)
     .then(() => {
       jobDom.remove()

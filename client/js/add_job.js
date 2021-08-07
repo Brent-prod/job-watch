@@ -7,7 +7,12 @@ function renderAddJob() {
       <section id="error"></section>
 
       <fieldset>
-        <label for="">Role:</label><br>
+        <label for="">userId:</label>
+        <input type="text" name="userId">
+      </fieldset>
+
+      <fieldset>
+        <label for="">Role:</label>
         <input type="text" name="role">
       </fieldset>
 
@@ -63,6 +68,7 @@ function renderAddJob() {
 
 function createJob(event) {
   event.preventDefault()
+  // console.log(state.jobs)
   const form = event.target
 
   const data = Object.fromEntries(new FormData(form))
@@ -71,6 +77,10 @@ function createJob(event) {
     .then(successResponse => {
       const newJob = successResponse.data
       state.jobs.push(newJob)
+      // hide addjob after posting the job
+      document.querySelector('.job').innerHTML = "";
+      // show jobslist
+
     })
     .catch(errorResponse => {
       document.querySelector('#error')

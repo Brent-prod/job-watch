@@ -9,8 +9,8 @@ router.post('/', (req, res) => {
    User.findByEmail(req.body.email)
        .then(user => {
            if (user && bcryptjs.compareSync(req.body.password, user.password_digest)) {
-             console.log(user)
                req.session.userId = user.id;
+               console.log(req.session);
                res.json(req.session);
            } else {
                // Error, user not found or wrong password
@@ -20,8 +20,10 @@ router.post('/', (req, res) => {
 });
 
 router.get('/', (req, res) => {
+    // console.log(req.session)
    User.findByName(req.session.userId)
     .then(user => {
+        // console.log(res.json({ userName: user.name }))
         res.json({ userName: user['name'] })
     })
 });

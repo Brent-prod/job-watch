@@ -7,7 +7,7 @@ function validationError(message) {
 function validateJob(req, res, next) {
   const role = req.body.role
   const company = req.body.company
-  const close_date = req.body.close_date
+  const close_date = req.body.date
   const contact = req.body.contact
 
   // TODO should probably be "isBlank(role)" - write a method

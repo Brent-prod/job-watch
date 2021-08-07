@@ -14,7 +14,7 @@ function getJob() {
 
 getJob()
 
-// function getUser() {
+function getUser() {
     axios.get('/api/sessions')
     .then(sessionInfo => {
       // console.log("sessionInfo @ initialize.js " + sessionInfo.data.userName)
@@ -38,6 +38,6 @@ getJob()
           .innerHTML = 'please login <br><a href="/login.html">Login</a> '
       }
     })
-  // }
+  }
 
-  // getUser()
+  getUser()

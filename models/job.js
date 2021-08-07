@@ -4,7 +4,7 @@ const Job = {
   create(userId, role, company, link, close_date, contact, notes, status) {
     const sql = `
       INSERT INTO jobs(userId, role, company, link, close_date, contact, notes, status)
-      VALUES($1, $2, $3, $4, $5, $6, $7)
+      VALUES($1, $2, $3, $4, $5, $6, $7, $8)
       RETURNING *
     `
     return db.query(sql, [userId, role, company, link, close_date, contact, notes, status])

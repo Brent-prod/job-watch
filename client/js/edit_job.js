@@ -17,8 +17,8 @@
 function renderEditJob() {
   const id = window.location.pathname.split("/").splice(2)[0]
   const selectedJob = state.jobs.find(job => job.id == id)
-  console.log(selectedJob)
-  console.log(selectedJob.date)
+  // console.log(selectedJob)
+  // console.log(selectedJob.date)
   document.querySelector('#page').innerHTML = `
   <section class="job">
     <h1>Edit Job</h1>
@@ -77,14 +77,14 @@ function editJob(event) {
   const form = event.target
 
   const id = window.location.pathname.split("/").splice(2)[0]
-  console.log(id)
+  // console.log(id)
 
   const data = Object.fromEntries(new FormData(form))
 
   axios.patch(`/api/jobs/${id}`, data) // need to get id from where
     .then(successResponse => {
       const updatedJob = successResponse.data
-      console.log(updatedJob)
+      // console.log(updatedJob)
     })
     .catch(errorResponse => {
       document.querySelector('#error')

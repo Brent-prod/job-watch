@@ -1,17 +1,18 @@
 const express = require('express')
 const router = express.Router()
 const Job = require('../models/job')
+const validateJob = require('../middlewares/jobs/validate_jobs')
 
 
 router.get('/', (req, res) => {
-  console.log(req.session)
+  // console.log(req.session)
   Job
-    .findAllByUser(req.session.userId)
+    .findAllByUser(1)
     .then(jobs => res.json(jobs))
 })
 
 
-router.post('/', (req, res) => {
+router.post('/', validateJob, (req, res) => {
   const role = req.body.role
   const company = req.body.company
   const close_date = req.body.date
@@ -19,7 +20,7 @@ router.post('/', (req, res) => {
   const contact_person = req.body.contact
   const notes = req.body.notes
   const status = req.body.status
-  const userId = req.session.userId
+  const userId = req.body.userId
 
   Job.create(userId, role, company, ad_link, close_date, contact_person, notes, status)
     .then(job => {
@@ -43,7 +44,6 @@ router.patch('/:id', (req, res) => {
     })
 
 })
-
 
 router.delete('/:id', (req, res) => {
   Job.delete(req.params.id)

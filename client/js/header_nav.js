@@ -4,8 +4,8 @@ function renderHeaderNav() {
     <h1>JobWatch</h1>
 
     <ul>
-    <li id="button" class="material-icons work" >work</li> 
-
+      <li class="material-icons work" onclick="render('addJob')">work</li> 
+      <li class="material-icons list" onclick="render('jobList')">list</li> 
     </ul>
   </nav>
   `;
@@ -15,8 +15,10 @@ function renderHeaderNav() {
 renderHeaderNav();
 
 function render(component) {
-  if (component === "jobList") {
+  if (component === "addJob") {
     renderAddJob();
+  } else if (component === "jobList") {
+    renderJobsList();
   }
 }
 
