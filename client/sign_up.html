@@ -44,11 +44,12 @@
         const data = Object.fromEntries(new FormData(signUpForm));
         axios.post('/api/users', data)
           .then(successResponse => {  
-            window.location = '/'})
+            window.location = '/'
+          })
           .catch(errorResponse => {
             document.querySelector('#errors')
-              .innerHTML = errorResponse.response.data.message;
-          });
+              .innerHTML = errorResponse.response.data.error;
+          })
       })
     </script>
 

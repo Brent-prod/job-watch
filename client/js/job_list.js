@@ -1,6 +1,4 @@
 // const { default: axios } = require("axios")
-
-// RUN THIS FUNCTION WHEN HEADER NAVIGATION BUTTON IS CLICKED!!!!
 function renderJobsList() {
   document.querySelector('#page').innerHTML = `
   <section class="job-columns">
@@ -71,10 +69,10 @@ function deleteJob(event) {
   axios.delete(`/api/jobs/${jobId}`)
     .then(() => {
       jobDom.remove()
-      // resp.json({deleted : `treasure ID ${jobId}`})
+      res.json({deleted : `job ID ${jobId}`})
     })
     .catch(error => {
-      console.log(error)
+      res.json({error: error})
     })
 }
 
