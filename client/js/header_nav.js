@@ -21,19 +21,6 @@ function render(component) {
     renderJobsList();
   } else if (component === "events") {
     renderEvents();
+    compareDates();
   }
 }
-
-// const button = document.querySelector('.button')
-// let clicked = false
-
-// button.addEventListener('click', () => {
-//   if (clicked) {
-//     render("addJob")
-//     clicked = false
-
-//   } else {
-//     document.querySelector('#page').innerHTML = ""
-//     clicked = true
-//   }
-// })
