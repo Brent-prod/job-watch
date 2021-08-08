@@ -53,4 +53,3 @@ function dateDiffInDays(currentDate, closeDate) {
   return Math.floor((utc2 - utc1) / msPerDay);
 }
 
-compareDates()
