@@ -1,0 +1,47 @@
+/* job list & columns */
+
+
+.job-columns{
+  margin: 0 auto;
+  margin-bottom: 5em;
+  display: grid;
+  max-width: 800px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  /* grid-template-columns: 1fr 1fr; */
+  grid-column-gap: 1em;
+}
+
+.job-list-completed {
+  display: flex;
+  flex-direction: column;
+}
+
+.job-list-incomplete {
+  display: flex;
+  flex-direction: column;
+}
+
+.job-card {
+  max-width: 100%;
+  padding: 1em;
+  border: 0.1em solid grey;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.edit-list {
+  display: flex;
+  flex-direction: row;
+}

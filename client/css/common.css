@@ -14,6 +14,7 @@ body {
   font-family: "Open Sans", sans-serif;
   background-color: #fcfcfc;
   max-width: 800px;
+  overflow-wrap: break-word;
 }
 
 .header-nav {
@@ -23,6 +24,7 @@ body {
 
 .content {
   margin-left: 100px;
+  /* margin: 0 auto; */
 }
 
 .hide {
@@ -32,29 +34,4 @@ body {
 #errors {
   font-weight: bold;
   color: red;
-}
-
-/* job list & columns */
-
-
-.job-columns{
-  display: grid;
-  max-width: 800px;
-  grid-template-columns: 1fr 1fr;
-}
-
-.job-list-completed {
-  display: flex;
-  flex-direction: column;
-  max-width: 25%;
-}
-
-.job-list-incomplete {
-  display: flex;
-  flex-direction: column;
-  max-width: 25%;
-}
-
-.job {
-  max-width: 100%;
 }
