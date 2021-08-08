@@ -5,11 +5,11 @@ function renderJobsList() {
   document.querySelector('#page').innerHTML = `
   <section class="job-columns">
     <div class="job-list-completed">
-      <h2>Incomplete</h2>
+      <h2>To Apply</h2>
       ${showJobsIncomplete()}
     </div>
     <div class="job-list-incomplete">
-      <h2>Completed</h2>
+      <h2>Applied</h2>
       ${showJobsCompleted()}
     </div>
   </section>

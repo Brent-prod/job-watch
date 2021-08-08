@@ -28,3 +28,11 @@ label {
 label#completed, label#incomplete {
   font-weight: normal;
 }
+
+@media only screen and (max-width: 400px) {
+  .job{
+    width: 90%;
+    padding: 1em;
+    margin-bottom: 1em;
+  }
+}
