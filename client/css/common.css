@@ -39,7 +39,6 @@ body {
 
 /* job list & columns */
 
-
 .job-columns{
   display: grid;
   max-width: 800px;

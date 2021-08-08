@@ -1,6 +1,6 @@
-h2, span {
+/* h2, span {
   margin-left: 6%;
-}
+} */
 #login, #sign-up-form, .login-nav {
   display: flex;
   padding: 10px;
@@ -8,7 +8,6 @@ h2, span {
 
 }
 input[type=password] {
-  margin-left:20px;
   padding:5px;
   width: 100%;
   border: 1px solid #e9e9e9;
