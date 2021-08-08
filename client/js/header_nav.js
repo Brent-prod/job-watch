@@ -5,7 +5,9 @@ function renderHeaderNav() {
     <ul>
       <li class="material-icons work" class="button" onclick="render('addJob')">work</li> 
       <li class="material-icons list" class="button" onclick="render('jobList')">list</li> 
-    </ul>
+      <li class="material-icons list" class="button" onclick="render('events')">event</li> 
+
+      </ul>
   </nav>
   `;
 }
@@ -17,6 +19,8 @@ function render(component) {
     renderAddJob();
   } else if (component === "jobList") {
     renderJobsList();
+  } else if (component === "events") {
+    renderEvents();
   }
 }
 
