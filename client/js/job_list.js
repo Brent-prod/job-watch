@@ -28,8 +28,8 @@ function showJobsIncomplete() {
       <h3>${job.company}</h3>
     </header>
     <ul class="card-list">
-      <li>${job.close_date.slice(0, 10)}</li>
       <li><a href="${job.link}">Link to job</a></li>
+      <li>${job.close_date.slice(0, 10)}</li>
       <li>${job.contact}</li>
       <li>${job.notes}</li>
     </ul>

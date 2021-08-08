@@ -1,3 +1,13 @@
+:root {
+  --red: #E27D60;
+  --blue: #85DCBA;
+  --orange: #E8A87C;
+  --vino: #C38D9E;
+  --green: #41B3A3;
+  --purple: #8B7AEC;
+  --white: #fcfcfc;
+}
+
 /* Common */
 * {
   /* to include padding & border in width & heigher calculations */
@@ -12,8 +22,8 @@ h1 {
 body {
   margin: 0 auto;
   font-family: "Open Sans", sans-serif;
-  background-color: #fcfcfc;
-  max-width: 800px;
+  background-color: var(--white);
+  max-width: 100%;
   overflow-wrap: break-word;
   display: grid;
   grid-template-columns: 1fr;
@@ -36,7 +46,7 @@ body {
 
 #userName {
   margin: 0;
-  padding: 1em 0;
+  padding: 0.6em;
 }
 
 @media only screen and (max-width: 400px) {

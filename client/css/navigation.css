@@ -3,6 +3,41 @@
 #header-nav {
   width: 100%;
   margin: 0;
+  padding: 0.5em;
+  padding-bottom: 1em;
+  background-color: var(--blue);
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+#header-nav h1 {
+  color: var(--white);
+  margin: 0;
+  letter-spacing: 0.02em;
+  /* text-shadow: 0px 0px 0 rgb(137, 156, 213), 1px 1px 0 rgb(129, 148, 205),
+    2px 2px 0 rgb(120, 139, 196), 3px 3px 0 rgb(111, 130, 187),
+    4px 4px 0 rgb(103, 122, 179), 5px 5px 0 rgb(94, 113, 170),
+    6px 6px 0 rgb(85, 104, 161), 7px 7px 0 rgb(76, 95, 152),
+    8px 8px 0 rgb(68, 87, 144), 9px 9px 0 rgb(59, 78, 135),
+    10px 10px 0 rgb(50, 69, 126), 11px 11px 0 rgb(42, 61, 118),
+    12px 12px 0 rgb(33, 52, 109), 13px 13px 0 rgb(24, 43, 100),
+    14px 14px 0 rgb(15, 34, 91), 15px 15px 0 rgb(7, 26, 83),
+    16px 16px 0 rgb(-2, 17, 74), 17px 17px 0 rgb(-11, 8, 65),
+    18px 18px 0 rgb(-19, 0, 57), 19px 19px 0 rgb(-28, -9, 48),
+    20px 20px 0 rgb(-37, -18, 39), 21px 21px 20px rgba(0, 0, 0, 1),
+    21px 21px 1px rgba(0, 0, 0, 0.5), 0px 0px 20px rgba(0, 0, 0, 0.2); */
+    text-shadow: 0px 0px 0 rgb(151, 137, 213), 1px 1px 0 rgb(137, 129, 205),
+    2px 2px 0 rgb(134, 120, 196), 3px 3px 0 rgb(131, 111, 187),
+    4px 4px 0 rgb(119, 103, 179), 5px 5px 0 rgb(114, 94, 170),
+    6px 6px 0 rgb(101, 85, 161), 7px 7px 0 rgb(105, 76, 152),
+    8px 8px 0 rgb(91, 68, 144), 9px 9px 0 rgb(86, 59, 135),
+    10px 10px 0 rgb(83, 50, 126), 11px 11px 0 rgb(71, 42, 118),
+    12px 12px 0 rgb(81, 33, 109), 13px 13px 0 rgb(82, 24, 100),
+    14px 14px 0 rgb(61, 15, 91), 15px 15px 0 rgb(59, 7, 83),
+    16px 16px 0 rgb(-2, 17, 74), 17px 17px 0 rgb(-11, 8, 65),
+    18px 18px 0 rgb(-19, 0, 57), 19px 19px 0 rgb(-28, -9, 48),
+    20px 20px 0 rgb(-37, -18, 39), 21px 21px 20px rgba(0, 0, 0, 1),
+    21px 21px 1px rgba(0, 0, 0, 0.5), 0px 0px 20px rgba(0, 0, 0, 0.2);
 }
 
 .header-nav nav {
@@ -30,7 +65,6 @@
   color: rgb(9, 51, 98);
 }
 
-
 /* 768px is the iPad in portrait mode */
 @media only screen and (max-width: 768px) {
   .header-nav {
@@ -43,7 +77,7 @@
 }
 
 @media only screen and (max-width: 400px) {
-  #header-nav{
+  #header-nav {
     width: 100%;
     padding: 1em;
     margin-top: 0;
