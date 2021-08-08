@@ -17,6 +17,8 @@ function getUser() {
             window.location = '/index.html'
           })
         })
+        
+        document.querySelector(".login-nav").innerHTML = "";
       }
       // else {
       //   // if not logged in
@@ -31,6 +33,7 @@ function getUser() {
 
       document.querySelector('#errors')
         .innerHTML = error.response.data.error;
+      
     })
 }
 
