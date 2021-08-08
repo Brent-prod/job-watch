@@ -6,30 +6,34 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Job Watch</title>
 
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Signika:wght@700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+   <link rel="stylesheet" href="/css/common.css">
+   <link rel="stylesheet" href="/css/navigation.css">
+   <link rel="stylesheet" href="/css/login.css">
+   <link rel="stylesheet" href="/css/forms.css">
 </head>
 <body>
+  <h1><a href="/">JobWatch</a></h1>
+  <span id="errors"></span>
 
-   <section class='sign-up'>
-      <h1>Sign Up</h1>
-      <form id='sign-up-form' method='POST'>
+   <section class="sign-up">
+      <h2>Sign Up</h2>
+      <form id="sign-up-form" method="POST">
         <section id="errors"></section>
-        <fieldset>
-          <label for="">Name:</label><br>
-          <input type="text" name='name'>
-        </fieldset>
-        <fieldset>
-          <label for="">Email:</label><br>
-          <input type="text" name='email'>
-        </fieldset>
-        <fieldset>
-          <label for="">Password:</label><br>
-          <input type="password" name='password'>
-        </fieldset>
-        <button>Sign up</button>
+          <input type="text" name="name" placeholder="username">
+
+          <input type="text" name="email" placeholder="email">
+
+          <input type="password" name="password" placeholder="password">
+
+        <button>Get Started</button>
       </form>
     </section>
 
-    <script type='text/javascript' src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" async></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" async></script>
     
     <script>
       
@@ -42,9 +46,8 @@
           .then(successResponse => {  
             window.location = '/'})
           .catch(errorResponse => {
-            console.log(errorResponse)
-            // document.querySelector('#errors')
-            //   .innerHTML = errorResponse.response.data.message;
+            document.querySelector('#errors')
+              .innerHTML = errorResponse.response.data.message;
           });
       })
     </script>

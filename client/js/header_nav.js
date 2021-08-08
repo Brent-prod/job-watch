@@ -1,8 +1,7 @@
 function renderHeaderNav() {
   document.querySelector("#header-nav").innerHTML = `
   <nav>
-    <h1>JobWatch</h1>
-
+  <h1><a href="/">JobWatch</a></h1>
     <ul>
       <li class="material-icons work" class="button" onclick="render('addJob')">work</li> 
       <li class="material-icons list" class="button" onclick="render('jobList')">list</li> 
@@ -21,16 +20,16 @@ function render(component) {
   }
 }
 
-const button = document.querySelector('.button')
-let clicked = false
+// const button = document.querySelector('.button')
+// let clicked = false
 
-button.addEventListener('click', () => {
-  if (clicked) {
-    render("addJob")
-    clicked = false
+// button.addEventListener('click', () => {
+//   if (clicked) {
+//     render("addJob")
+//     clicked = false
 
-  } else {
-    document.querySelector('#page').innerHTML = ""
-    clicked = true
-  }
-})
+//   } else {
+//     document.querySelector('#page').innerHTML = ""
+//     clicked = true
+//   }
+// })
