@@ -9,7 +9,7 @@ function validateJob(req, res, next) {
   const company = req.body.company
   const close_date = req.body.date
   const contact = req.body.contact
-
+  const userId = req.session.userId
   // TODO should probably be "isBlank(role)" - write a method
   if (role === '' || role === undefined || role === null) {
     throw validationError("Role is required");
@@ -17,6 +17,9 @@ function validateJob(req, res, next) {
   else if (company === '' || company === undefined || company === null) {
     throw validationError("Company is required");
   }
+  else if (userId === '' || userId === undefined || userId === null) {
+    throw validationError("User is not logged in");
+  } 
   else if (close_date === '' || close_date === undefined || close_date === null) {
     throw validationError("Close Date is required");
   }

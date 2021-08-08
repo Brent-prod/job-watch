@@ -76,28 +76,15 @@ function editJob(event) {
   // console.log(id)
 
   const data = Object.fromEntries(new FormData(form))
-  console.log(data)
-  axios.patch(`/api/jobs/${id}`, data) // need to get id from where
+  axios.patch(`/api/jobs/${id}`, data) 
     .then(successResponse => {
-      const updatedJob = successResponse.data
+      window.location = '/'
     })
-    .then(() => window.location = '/')
     .catch(errorResponse => {
       document.querySelector('#error')
-        .innerHTML = errorResponse.response.data.message
+        .innerHTML = errorResponse.response.data.error
     })
   
 }
 
 getJob().then(renderEditJob)
-// getJobData()
-
-
-// Could use renderAddJob to hand both create and update actions
-// function addOrEdit(action) {
-//   if (action === "edit") {
-//     return "editJob(event)"
-//   } else {
-//     return "createJob(event)"
-//   }
-// }

@@ -28,7 +28,7 @@ router.post('/', validateJob, (req, res) => {
     })
 })
 
-router.patch('/:id', (req, res) => {
+router.patch('/:id', validateJob, (req, res) => {
   const role = req.body.role
   const company = req.body.company
   const close_date = req.body.date
@@ -37,7 +37,6 @@ router.patch('/:id', (req, res) => {
   const notes = req.body.notes
   const status = req.body.status
   const id = req.params.id
-  console.log(close_date)
 
   Job.edit(role, company, ad_link, close_date, contact_person, notes, status, id)
     .then(job => {

@@ -77,7 +77,7 @@ function createJob(event) {
     })
     .catch(errorResponse => {
       document.querySelector('#error')
-        .innerHTML = errorResponse.response.data.message
+        .innerHTML = errorResponse.response.data.error
     })
 }
 
