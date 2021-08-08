@@ -5,8 +5,10 @@ function getUser() {
       // if logged in
       state.user = sessionInfo.data.userName;
         document.querySelector('#userName')
-        .innerHTML = sessionInfo.data.userName + ' is logged in ' + '<br><button id="logout">Logout</button>'
-        document.getElementById("login").style.display = "none";
+        .innerHTML = `
+        <p> Welcome, ${sessionInfo.data.userName}!</p>
+        <button id="logout">Logout</button>
+        `
 
         // to make a delete request to log out a user
         document.querySelector('#logout').addEventListener('click', event => {
@@ -23,3 +25,4 @@ function getUser() {
 }
 
 getUser()
+

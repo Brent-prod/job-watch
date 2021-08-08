@@ -21,16 +21,24 @@
 </head>
 
 <body>
-  <h1 id="header">Log In</h1>
-  <h2 id="errors"></h2>
+  <h1>JobWatch</h1>
+  <section class="login">
+    <h2>Log In</h2>
+    <span id="errors"></span>
 
-  <form id="login">
-    <input type="text" name="name" placeholder="Name">
-    <input type="text" name="email" placeholder="Email">
-    <input type="password" name="password" placeholder="Password">
-    <input type="submit" value="Log in">
-  </form>
+    <form id="login">
+      <input type="text" name="name" placeholder="Name">
+      <input type="text" name="email" placeholder="Email">
+      <input type="password" name="password" placeholder="Password">
+      <input type="submit" value="Log in">
+    </form>
+  </section>
 
+
+  <div>
+    <a href="/sign_up.html">No account? Sign up here</a>
+
+  </div>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script>
     const form = document.querySelector('#login')
