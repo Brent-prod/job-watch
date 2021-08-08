@@ -52,8 +52,7 @@
         .catch(error => {
           // console.log(error)
           document.getElementById("errors").style.display = "block"
-          document.querySelector('#errors')
-            .innerHTML = error.response.data.error;
+          document.querySelector('#errors').innerHTML = error;
         })
     })
   </script>

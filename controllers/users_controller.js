@@ -5,16 +5,19 @@ const {createSession} = require('../helpers/sessions_helper')
 
 const router = express.Router();
 
-router.post('/', (req, res) => {
+router.post('/', validateUser, (req, res) => {
   User.createUser(
       req.body.name,
       req.body.email,
       req.body.password,
-  ).then(user => {
+  ).then(successResponse => {
     // this logs the user in automatically after signing up
-      createSession(req, user);
-      res.json(user);
-  });
+      createSession(req, successResponse);
+      res.json(successResponse);
+  })
+  .catch(err => {
+    res.json(err.response.data.error)
+  })
 })
 
 module.exports = router;

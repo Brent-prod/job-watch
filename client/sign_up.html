@@ -48,7 +48,7 @@
           })
           .catch(errorResponse => {
             document.querySelector('#errors')
-              .innerHTML = errorResponse.response.data.message;
+              .innerHTML = errorResponse.response.data.error;
           })
       })
     </script>
