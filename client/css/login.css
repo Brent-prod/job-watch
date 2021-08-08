@@ -16,8 +16,14 @@ input[type=password] {
   background-color: #f0f0f0;
 }
 input[type=submit], button {
-  margin-left:20px;
-
+  margin-left: 20px;
+  white-space: nowrap;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #009e9e;
+  color:white;
+  font-family: "Open Sans", sans-serif;
 }
 div {
   text-align: center;
@@ -25,4 +31,15 @@ div {
 .login-signup {
   display: flex;
   justify-content: space-around;
+}
+
+section.login-nav > div {
+  background-color: #85dcb8;
+  padding: 10px 30px;
+  border-radius: 20px;
+}
+
+section.login-nav > div a {
+  text-decoration: none;
+  color:#ffffff;
 }

@@ -9,6 +9,9 @@ h1, h2 {
 h1 {
   font-size: 40px;
 }
+h1 > a {
+  text-decoration: none;
+}
 body {
   margin: 0 auto;
   font-family: "Open Sans", sans-serif;
@@ -21,9 +24,9 @@ body {
   padding: 0 1em;
 }
 
-.content {
+/* .content {
   margin-left: 100px;
-}
+} */
 
 .hide {
   display: none;
