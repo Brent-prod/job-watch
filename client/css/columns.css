@@ -14,6 +14,7 @@
 .job-list-completed {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .job-list-incomplete {

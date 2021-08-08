@@ -13,16 +13,40 @@
   /* to include padding & border in width & heigher calculations */
   box-sizing: border-box;
 }
+
 h1, h2 {
   font-family: "Signika", sans-serif;
 }
+
 h1 {
   font-size: 40px;
 }
-h1 > a {
+
+#header-nav > nav > h1 > a {
   text-decoration: none;
   color: var(--white);
 }
+
+#userName {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+}
+
+#userName > p {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  padding-left: 1em;
+}
+
+
+#logout {
+  grid-column-start: 4;
+  justify-self: center;
+  align-self: center;
+  padding: 0.5em;
+}
+
 body {
   margin: 0 auto;
   font-family: "Open Sans", sans-serif;
@@ -46,36 +70,4 @@ body {
 #errors {
   font-weight: bold;
   color: red;
-}
-
-/* job list & columns */
-
-.job-columns{
-  display: grid;
-  max-width: 800px;
-  grid-template-columns: 1fr 1fr;
-}
-
-.job-list-completed {
-  display: flex;
-  flex-direction: column;
-  max-width: 25%;
-}
-
-.job-list-incomplete {
-  display: flex;
-  flex-direction: column;
-  max-width: 25%;
-}
-
-#userName {
-  margin: 0;
-  padding: 0.6em;
-}
-
-@media only screen and (max-width: 400px) {
-  #userName{
-    width: 90%;
-    margin: 1em;
-  }
 }
